@@ -13,7 +13,7 @@ var jwtSecret = []byte("secret")
 
 func AuthMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {
-
+		fmt.Println("In auth middleware")
 		authHeader := c.Request().Header.Get("Authorization")
 		if authHeader == "" {
 			fmt.Println("No token provided in header")
